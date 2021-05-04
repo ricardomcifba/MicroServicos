@@ -15,31 +15,36 @@ import org.springframework.web.bind.annotation.RestController;
 import com.devsuperior.hrworker.entities.Worker;
 import com.devsuperior.hrworker.repositories.WorkerRepository;
 
-
 @RestController
 @RequestMapping(value = "/workers")
 public class WorkerResources {
 
 	private static Logger logger = org.slf4j.LoggerFactory.getLogger(WorkerResources.class);
-	
+
 	@Autowired
 	private Environment env;
-	
-	@Autowired 
+
+	@Autowired
 	private WorkerRepository repository;
-	
+
 	@GetMapping
-	public ResponseEntity<List<Worker>> findAll(){
+	public ResponseEntity<List<Worker>> findAll() {
 		List<Worker> list = repository.findAll();
 		return ResponseEntity.ok(list);
 	}
-	
-	@GetMapping(value = "/{id}")	
-	public ResponseEntity<Worker> findById(@PathVariable Long id){
-		
-		logger.info("Port = "+ env.getProperty("local.server.port"));
+
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<Worker> findById(@PathVariable Long id) {
+
+		/*try {
+			Thread.sleep(3000L);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}*/
+
+		logger.info("Port = " + env.getProperty("local.server.port"));
 		Worker obj = repository.findById(id).get();
 		return ResponseEntity.ok(obj);
-	}	
-	
+	}
+
 }
