@@ -1,4 +1,4 @@
-package com.devsuperior.hrconfigserver.entities;
+package com.devsuperior.hruser.entities;
 
 import java.io.Serializable;
 import java.util.HashSet;
