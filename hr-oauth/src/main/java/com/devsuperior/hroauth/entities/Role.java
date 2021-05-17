@@ -30,12 +30,12 @@ public class Role implements Serializable{
 		this.id = id;
 	}
 
-	public String getRoleNme() {
+	public String getRoleName() {
 		return roleName;
 	}
 
-	public void setRoleNme(String roleNme) {
-		this.roleName = roleNme;
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
 
 	@Override
