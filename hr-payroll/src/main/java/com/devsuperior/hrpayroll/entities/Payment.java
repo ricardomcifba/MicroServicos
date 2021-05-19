@@ -3,32 +3,28 @@ package com.devsuperior.hrpayroll.entities;
 import java.io.Serializable;
 
 public class Payment implements Serializable {
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-	private String nameString;
+
+	private String name;
 	private Double dailyIncome;
 	private Integer days;
 	
 	public Payment() {
-		
 	}
-	
-	public Payment(String nameString, Double dailyIncome, Integer days) {
+
+	public Payment(String name, Double dailyIncome, Integer days) {
 		super();
-		this.nameString = nameString;
+		this.name = name;
 		this.dailyIncome = dailyIncome;
 		this.days = days;
 	}
 
-	public String getNameString() {
-		return nameString;
+	public String getName() {
+		return name;
 	}
 
-	public void setNameString(String nameString) {
-		this.nameString = nameString;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Double getDailyIncome() {
@@ -48,7 +44,6 @@ public class Payment implements Serializable {
 	}
 	
 	public double getTotal() {
-		return days*dailyIncome;
+		return days * dailyIncome;
 	}
-	
 }

@@ -33,10 +33,10 @@ public class UserService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = userFeignClient.findByEmail(username).getBody();
 		if (user == null) {
-			logger.error("Usuario não encontrado : " + username);
-			throw new UsernameNotFoundException("Usuario não encontrado");
+			logger.error("Email not found: " + username);
+			throw new UsernameNotFoundException("Email not found");
 		}
-		logger.info("Usuario encontrado: " + username);
+		logger.info("Email found: " + username);
 		return user;
 	}
 }

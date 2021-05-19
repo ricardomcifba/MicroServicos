@@ -1,4 +1,4 @@
-package com.devsuperior.hrpayroll.feingclients;
+package com.devsuperior.hrpayroll.feignclients;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;

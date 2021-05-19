@@ -10,13 +10,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_role")
-public class Role implements Serializable{
-
-	/**
-	 * 
-	 */
+public class Role implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -43,8 +39,8 @@ public class Role implements Serializable{
 		return roleName;
 	}
 
-	public void setRoleName(String roleNme) {
-		this.roleName = roleNme;
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
 
 	@Override
@@ -71,6 +67,4 @@ public class Role implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
 }
